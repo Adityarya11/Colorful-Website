@@ -1,4 +1,4 @@
-# Dark Mode Wheel
+# Colorful Website
 
 **Dark Mode Wheel** is a browser extension that enables users to apply a custom dark or tinted theme to any website. It overrides native color modes to provide a consistent browsing experience based on user-defined color preferences.
 
