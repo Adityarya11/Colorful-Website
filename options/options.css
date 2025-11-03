@@ -1,0 +1,97 @@
+:root {
+  --bg: #0f1724;
+  --muted: #9aa4b2;
+  --accent: #82aaff;
+  --surface: #0b1220;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #e6eef8;
+  background: var(--bg);
+  min-height: 100vh;
+}
+.wrap {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+.block {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+.row.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+input[type="color"] {
+  width: 44px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+}
+button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background: var(--accent);
+  color: #061226;
+  font-weight: 600;
+}
+.list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  align-items: center;
+}
+.item .meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.item .actions {
+  display: flex;
+  gap: 6px;
+}
+.small.muted {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+input[type="text"],
+input[type="file"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: invert(#000);
+}

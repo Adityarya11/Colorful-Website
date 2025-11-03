@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dark Mode Wheel — Options</title>
+    <link rel="stylesheet" href="options.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <h1>Dark Mode Wheel — Options</h1>
+
+        <section class="block">
+            <h2>Global preset</h2>
+            <div class="row">
+                <label>Background</label>
+                <input id="globalBg" type="color" />
+                <label>Accent</label>
+                <input id="globalAccent" type="color" />
+            </div>
+            <div class="row">
+                <button id="saveGlobal">Save Global Preset</button>
+                <button id="resetDefaults">Reset Defaults</button>
+            </div>
+        </section>
+
+        <section class="block">
+            <h2>Presets</h2>
+            <div id="presetsList" class="list"></div>
+            <div class="row">
+                <input id="presetName" placeholder="New preset name" />
+                <input id="presetBg" type="color" value="#0f1113" />
+                <input id="presetAccent" type="color" value="#82aaff" />
+                <button id="addPreset">Add preset</button>
+            </div>
+        </section>
+
+        <section class="block">
+            <h2>Per-site settings</h2>
+            <div id="perSiteList" class="list"></div>
+            <div class="row small">
+                <button id="clearAllPerSite">Clear all per-site settings</button>
+            </div>
+        </section>
+
+        <section class="block">
+            <h2>Import / Export</h2>
+            <div class="row">
+                <button id="exportBtn">Export JSON</button>
+                <input id="importFile" type="file" accept=".json" />
+                <button id="importBtn">Import</button>
+            </div>
+            <div id="importStatus" class="small muted"></div>
+        </section>
+
+        <footer>
+            <small>Tip: Per-site settings override the global preset when present.</small>
+        </footer>
+    </main>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

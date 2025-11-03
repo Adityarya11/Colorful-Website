@@ -1,0 +1,85 @@
+:root {
+  --dm-bg: #0f1113;
+  --dm-text: #e6e6e6;
+  --dm-accent: #82aaff;
+  --dm-overlay-alpha: 0.12;
+}
+
+/* Active flag on root enables DM Wheel rules */
+:root[data-dmw-active="true"] {
+  color-scheme: dark;
+}
+
+/* Conservative color enforcement for common content containers.
+   We scope this under the root attribute to avoid applying globally when disabled. */
+:root[data-dmw-active="true"] html,
+:root[data-dmw-active="true"] body,
+:root[data-dmw-active="true"] main,
+:root[data-dmw-active="true"] article,
+:root[data-dmw-active="true"] section,
+:root[data-dmw-active="true"] .content,
+:root[data-dmw-active="true"] #content {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Make text inherit the theme color on most inline elements */
+:root[data-dmw-active="true"] p,
+:root[data-dmw-active="true"] span,
+:root[data-dmw-active="true"] a,
+:root[data-dmw-active="true"] li,
+:root[data-dmw-active="true"] td,
+:root[data-dmw-active="true"] th,
+:root[data-dmw-active="true"] h1,
+:root[data-dmw-active="true"] h2,
+:root[data-dmw-active="true"] h3,
+:root[data-dmw-active="true"] h4,
+:root[data-dmw-active="true"] h5,
+:root[data-dmw-active="true"] h6,
+:root[data-dmw-active="true"] input,
+:root[data-dmw-active="true"] textarea,
+:root[data-dmw-active="true"] button,
+:root[data-dmw-active="true"] label {
+  color: var(--dm-text) !important;
+  background-color: transparent !important;
+}
+
+/* Accent color for links and interactive items */
+:root[data-dmw-active="true"] a,
+:root[data-dmw-active="true"] button,
+:root[data-dmw-active="true"] [role="button"],
+:root[data-dmw-active="true"] input[type="submit"] {
+  color: var(--dm-accent) !important;
+}
+
+/* Prevent overlay from blocking pointer events */
+#dmw-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483646; /* very high but below browser UI */
+  mix-blend-mode: multiply;
+  transition: background-color 150ms linear;
+}
+
+/* Optional media fix class (applies invert to media when user chooses) */
+.dmw-fix-media img,
+.dmw-fix-media video,
+.dmw-fix-media picture {
+  filter: invert(1) hue-rotate(180deg) !important;
+  transition: filter 200ms ease;
+}
+
+/* Ignore class to protect inputs or third-party widgets from heavy overrides */
+.dmw-ignore,
+.dmw-ignore * {
+  color: initial !important;
+  background-color: initial !important;
+}
+
+/* Avoid touching critical system-level elements */
+:root[data-dmw-active="true"] iframe,
+:root[data-dmw-active="true"] svg {
+  /* leave alone unless we add site-specific rules later */
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dark Mode Wheel</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Dark Mode Wheel</h1>
+        </header>
+
+        <section class="controls">
+            <div class="row">
+                <label class="switch">
+                    <input id="toggle" type="checkbox" />
+                    <span class="slider"></span>
+                </label>
+                <div class="toggle-label">Enable</div>
+            </div>
+
+            <div class="row">
+                <label for="colorPicker">Background</label>
+                <input id="colorPicker" type="color" value="#0f1113" />
+                <label for="accentPicker">Accent</label>
+                <input id="accentPicker" type="color" value="#82aaff" />
+            </div>
+
+            <div class="row">
+                <label for="overlayRange">Tint strength</label>
+                <input id="overlayRange" type="range" min="0" max="50" value="12" />
+                <span id="overlayValue">12%</span>
+            </div>
+
+            <div class="row small">
+                <input id="invertImages" type="checkbox" />
+                <label for="invertImages">Invert images when needed</label>
+            </div>
+
+            <div class="row presets">
+                <div class="preset" data-bg="#0f1113" data-text="#e6e6e6" data-accent="#82aaff">Neutral</div>
+                <div class="preset" data-bg="#0b0a0a" data-text="#f3efe6" data-accent="#f08c00">Warm</div>
+                <div class="preset" data-bg="#061226" data-text="#dbeafe" data-accent="#7c3aed">Blue</div>
+            </div>
+
+            <div class="row actions">
+                <button id="applyBtn">Apply</button>
+                <button id="removeBtn">Remove</button>
+            </div>
+
+            <div id="status" aria-live="polite" class="status"></div>
+        </section>
+
+        <footer><small>Options & presets → <a href="#" id="openOptions">Open</a></small></footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
